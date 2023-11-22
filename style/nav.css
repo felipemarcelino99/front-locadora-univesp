@@ -1,0 +1,142 @@
+.inputwidth-56 {
+    width: 56px;
+}
+
+.inputwidth-168 {
+    width: 168px;
+}
+
+.inputwidth-392 {
+    width: 392px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-custom-grey {
+    color: #767676;
+}
+
+.fontsize-18 {
+    font-size: 18px;
+}
+
+.fontsize-20 {
+    font-size: 20px;
+}
+
+.fontsize-24 {
+    font-size: 24px;
+}
+
+.fontstyle-cursive {
+    font-family: cursive;
+}
+
+.menu{
+    list-style: none;
+    float: left;
+    }
+
+.menu li{
+    position: relative;
+    float: left;
+    }
+
+.menu li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 10px;
+}
+
+.menu li a:hover{
+background: rgb(138, 198, 255);
+color: #000000;
+box-shadow: 0 3px 10px 0 #CCC;
+-moz-box-shadow: 0 3px 10px 0 #CCC;
+-webkit-box-shadow: 0 3px 10px 0 #ccc;
+text-shadow: 0px 0px 5px #fff;
+}
+
+.menu li ul li{
+    display: block;
+    width: 150px;
+    }
+
+.menu li  ul{
+    border-radius: 10px;
+    position:absolute;
+    top: 34px;
+    left:0;
+    background-color: #149BFC;
+    display:none;
+    }
+
+.menu li:hover ul, .menu li.over ul {
+    display:block;
+}
+
+nav {
+    display: flex;
+    height: 84px;
+    padding: 0 24px 0 24px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--Blue, #149BFC);
+}
+
+nav > * {
+    display: flex;
+}
+
+nav a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav > div:first-of-type {
+    align-items: center;
+    gap: 8px;
+}
+
+#last {
+    height: 80%;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+#sair {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#sair a {
+    padding: 2px;
+}
+
+#sair a:hover{
+    background: rgb(255, 77, 77);
+    border-radius: 10px;
+    color: #000000;
+    box-shadow: 0 3px 10px 0 #CCC;
+    -moz-box-shadow: 0 3px 10px 0 #CCC;
+    -webkit-box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+ul {
+    gap: 48px;
+}

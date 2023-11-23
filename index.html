@@ -7,11 +7,74 @@
     <title>uniVHSp</title>
     <link rel="stylesheet" href="./assets/styles/normalize.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./layout/header/styles.css" />
+    <link rel="stylesheet" href="./layout//footer/styles.css" />
   </head>
-  <body>
-    <head></head>
-    <main><h1>Hello, World!</h1></main>
-    <footer></footer>
+  <body role="body">
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <main id="wrapper" aria-label="Conteúdo da página">
+      <div id="home">
+        <section class="indent">
+          <div class="containerForm">
+            <h1>Bem-vindo ao Sistema de Locação</h1>
+            <h2>Preencha os dados de login para acessar</h2>
+            <form action="javascript:;" id="formLogin">
+              <div class="containerInput">
+                <label for="email">Usuário</label>
+                <div class="boxInputLogin">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Insira seu e-mail"
+                    value=""
+                    class="inputLogin"
+                  />
+                  <div aria-label="Ícone usuário" role="img" class="iconUser">
+                    <img
+                      src="./assets/images/icons/user.png"
+                      width="24"
+                      height="24"
+                      alt="Ícone usuário"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="containerInput">
+                <label for="email">Senha</label>
+                <div class="boxInputLogin">
+                  <input
+                    name="senha"
+                    type="password"
+                    placeholder="Insira sua senha"
+                    value=""
+                    class="inputLogin"
+                  />
+                  <div
+                    aria-label="Ícone usuário"
+                    role="img"
+                    class="iconPassword"
+                  >
+                    <img
+                      src="./assets/images/icons/show-password.png"
+                      width="24"
+                      height="24"
+                      alt="Ícone usuário"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+            <button type="submit" class="defaultBtn">Entrar</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer id="footer-container"></footer>
     <script src="./assets/scripts/main.js"></script>
   </body>
 </html>

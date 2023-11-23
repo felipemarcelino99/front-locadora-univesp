@@ -44,15 +44,15 @@
     font-family: cursive;
 }
 
-.menu{
+.menu {
     list-style: none;
     float: left;
-    }
+}
 
-.menu li{
+.menu li {
     position: relative;
     float: left;
-    }
+}
 
 .menu li a {
     text-decoration: none;
@@ -61,31 +61,32 @@
     border-radius: 10px;
 }
 
-.menu li a:hover{
-background: rgb(138, 198, 255);
-color: #000000;
-box-shadow: 0 3px 10px 0 #CCC;
--moz-box-shadow: 0 3px 10px 0 #CCC;
--webkit-box-shadow: 0 3px 10px 0 #ccc;
-text-shadow: 0px 0px 5px #fff;
+.menu li a:hover {
+    background: rgb(138, 198, 255);
+    color: #000000;
+    box-shadow: 0 3px 10px 0 #CCC;
+    -moz-box-shadow: 0 3px 10px 0 #CCC;
+    -webkit-box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
 }
 
-.menu li ul li{
+.menu li ul li {
     display: block;
     width: 150px;
-    }
+}
 
-.menu li  ul{
+.menu li ul {
     border-radius: 10px;
-    position:absolute;
+    position: absolute;
     top: 34px;
-    left:0;
+    left: 0;
     background-color: #149BFC;
-    display:none;
-    }
+    display: none;
+}
 
-.menu li:hover ul, .menu li.over ul {
-    display:block;
+.menu li:hover ul,
+.menu li.over ul {
+    display: block;
 }
 
 nav {
@@ -97,16 +98,17 @@ nav {
     background: var(--Blue, #149BFC);
 }
 
-nav > * {
+nav>* {
     display: flex;
 }
 
-nav a, a:visited {
+nav a,
+a:visited {
     text-decoration: none;
     color: inherit;
 }
 
-nav > div:first-of-type {
+nav>div:first-of-type {
     align-items: center;
     gap: 8px;
 }
@@ -127,7 +129,7 @@ nav > div:first-of-type {
     padding: 2px;
 }
 
-#sair a:hover{
+#sair a:hover {
     background: rgb(255, 77, 77);
     border-radius: 10px;
     color: #000000;

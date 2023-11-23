@@ -12,17 +12,17 @@ body {
     background-color: white;
 }
 
-#main-frame > a > svg {
+#main-frame>a>svg {
     margin: 16px;
 }
 
-#main-frame > div {
+#main-frame>div {
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
 
-#main-frame > div > svg {
+#main-frame>div>svg {
     width: 24px;
     height: 24px;
 }
@@ -36,19 +36,19 @@ form {
     align-items: center;
 }
 
-form > div {
+form>div {
     display: flex;
-/*     width: 280px; */
+    /*     width: 280px; */
     gap: 50px;
     justify-content: center;
     align-items: center;
 }
 
-form > div > label {
+form>div>label {
     display: flex;
     justify-content: flex-start;
 }
 
-form > div > input {
+form>div>input {
     border-radius: 10px;
 }

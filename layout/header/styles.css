@@ -1,144 +1,37 @@
-.inputwidth-56 {
-    width: 56px;
+:root {
+    --defaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
 }
+#header-container {position: fixed; width: 100%;}
+#header {background-color: var(--defaultBlue); padding: 25px; display: flex; align-items: center; justify-content: space-between; gap: 50px; position: relative;}
+#header .containerLogo {display: flex; align-items: center; justify-content: center; gap: 10px;}
+#header .containerLogo .logo {max-width: 40px; width: 100%; height: fit-content; max-height: 40px;}
+#header .containerLogo .logoText {font-size: 25px; font-weight: bold; text-align: left; color: var(--white);}
+#header > div:nth-child(2) {max-width: fit-content; width: 100%;}
+#header > div:nth-child(2) #hamburger {position: relative; width: 30px; padding: 10px; z-index: 10;}
+#header > div:nth-child(2) #hamburger .line_1,
+#header > div:nth-child(2) #hamburger .line_2,
+#header > div:nth-child(2) #hamburger .line_3 {
+        width: 30px;
+        height: 3px;
+        background-color: var(--white);
+        border-radius: 8px;
+    }
+#hamburger .line_2 {content: ''; position: absolute; top: 0; transition: all .3s ease;}
+#hamburger .line_3 {content: ''; position: absolute; bottom: 0; transition: all .3s ease;}
+#hamburger.open .line_1 {width: 0; opacity: 0;}
+#hamburger.open .line_2 {transform: rotate(45deg); top: 10px; transition: all .3s ease;}
+#hamburger.open .line_3 {transform: rotate(-45deg); bottom: 10px; transition: all .3s ease;}
 
-.inputwidth-168 {
-    width: 168px;
-}
-
-.inputwidth-392 {
-    width: 392px;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.color-white {
-    color: white;
-}
-
-.color-custom-grey {
-    color: #767676;
-}
-
-.fontsize-18 {
-    font-size: 18px;
-}
-
-.fontsize-20 {
-    font-size: 20px;
-}
-
-.fontsize-24 {
-    font-size: 24px;
-}
-
-.fontstyle-cursive {
-    font-family: cursive;
-}
-
-.menu {
-    list-style: none;
-    float: left;
-}
-
-.menu li {
-    position: relative;
-    float: left;
-}
-
-.menu li a {
-    text-decoration: none;
-    padding: 5px 10px;
-    display: block;
-    border-radius: 10px;
-}
-
-.menu li a:hover {
-    background: rgb(138, 198, 255);
-    color: #000000;
-    box-shadow: 0 3px 10px 0 #CCC;
-    -moz-box-shadow: 0 3px 10px 0 #CCC;
-    -webkit-box-shadow: 0 3px 10px 0 #ccc;
-    text-shadow: 0px 0px 5px #fff;
-}
-
-.menu li ul li {
-    display: block;
-    width: 150px;
-}
-
-.menu li ul {
-    border-radius: 10px;
-    position: absolute;
-    top: 34px;
-    left: 0;
-    background-color: #149BFC;
-    display: none;
-}
-
-.menu li:hover ul,
-.menu li.over ul {
-    display: block;
-}
-
-nav {
-    display: flex;
-    height: 84px;
-    padding: 0 24px 0 24px;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--Blue, #149BFC);
-}
-
-nav>* {
-    display: flex;
-}
-
-nav a,
-a:visited {
-    text-decoration: none;
-    color: inherit;
-}
-
-nav>div:first-of-type {
-    align-items: center;
-    gap: 8px;
-}
-
-#last {
-    height: 80%;
-    justify-content: space-between;
-    padding: 16px 0;
-}
-
-#sair {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#sair a {
-    padding: 2px;
-}
-
-#sair a:hover {
-    background: rgb(255, 77, 77);
-    border-radius: 10px;
-    color: #000000;
-    box-shadow: 0 3px 10px 0 #CCC;
-    -moz-box-shadow: 0 3px 10px 0 #CCC;
-    -webkit-box-shadow: 0 3px 10px 0 #ccc;
-    text-shadow: 0px 0px 5px #fff;
-}
-
-ul {
-    gap: 48px;
-}
+#header #hideMenu {width: 0; opacity: 0; position: fixed; top: 0; right: -350px; transition: all .4s ease;}
+#header #hideMenu #menu {width: 100%; max-width: 100%; background-color: var(--defaultBlue); padding: 50px; height: 100vh;}
+#header #hideMenu #menu ul,
+#header #hideMenu #menu ul li {list-style: none;}
+#header #hideMenu #menu ul li + li {margin-top: 20px;}
+#header #hideMenu #menu ul li a {color: var(--white); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5; font-size: 16px; text-decoration: none; transition: all .4s ease-in;}
+#header #hideMenu #menu ul li a:hover {text-decoration: underline; color: #fefefe; transform: scale(1.1); transition: all .4s ease-out;}
+#header #hideMenu.open {width: 250px; right: 0; opacity: 1; transition: all .4s ease;}

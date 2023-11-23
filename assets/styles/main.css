@@ -1,23 +1,32 @@
-#wrapper {min-height: 100vh; display: flex; align-items: center; justify-content: center;}
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0,0,0,.5);
+    --blackOpacityTwentyFive: rgba(0,0,0,.5);
+}
+
+#wrapper {min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 90px;}
 .indent {max-width: 1080px; width: 100%; margin: 0 auto;}
 image {display: block; width: 100%; max-width: 100%; height: 100%;}
 
 
-.defaultBtn {display: block; background-color: #0078F0; color: #FFF; font-weight: 500; text-transform: uppercase; padding: 15px 25px; width: 100%; max-width: 100%; border: none; border-radius: 8px; transition: all .4s ease-in;}
-.defaultBtn:active {transform: scale(.95); box-shadow: 8px 8px 8px rgba(0, 0, 0, .25); transition: all .4s ease-out;}
+.defaultBtn {display: block; background-color: var(--blue); color: var(--white); font-weight: 500; text-transform: uppercase; padding: 15px 25px; width: 100%; max-width: 100%; border: none; border-radius: 8px; transition: all .4s ease-in;}
+.defaultBtn:active {transform: scale(.95); box-shadow: 8px 8px 8px var(--blackOpacityTwentyFive); transition: all .4s ease-out;}
 
 /* HOME */
 #home {flex: 1; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; background: url(./../images/resources/bg-transparency.png) center center no-repeat; background-size: cover;}
-#home .containerForm {max-width: 520px; width: 100%; background-color: #FFF; padding: 35px 70px 55px; border-radius: 20px; box-shadow: 16px 16px 16px rgba(0, 0, 0, .25); margin: 0 auto;}
+#home .containerForm {max-width: 520px; width: 100%; background-color: var(--white); padding: 35px 70px 55px; border-radius: 20px; box-shadow: 16px 16px 16px var(--blackOpacityTwentyFive); margin: 0 auto;}
 #home .containerForm h1 {text-align: center; font-weight: bold;}
-#home .containerForm h2 {text-align: center; color: rgba(0, 0, 0, .5); margin: 45px 0 55px;}
+#home .containerForm h2 {text-align: center; color: var(--blackOpacityFifty); margin: 45px 0 55px;}
 #home .containerForm #formLogin {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px;}
 #home .containerForm #formLogin .containerInput {max-width: 289px; width: 100%;}
-#home .containerForm #formLogin .containerInput label {display: block; font-size: 14px; color: #333; margin-bottom: 10px;}
-#home .containerForm #formLogin .containerInput .boxInputLogin { border-bottom: 2px solid rgba(0, 0, 0, .5); display: flex; align-items: center; justify-content: space-between; gap: 15px;}
+#home .containerForm #formLogin .containerInput label {display: block; font-size: 14px; color: var(--darkGray); margin-bottom: 10px;}
+#home .containerForm #formLogin .containerInput .boxInputLogin { border-bottom: 2px solid var(--blackOpacityFifty); display: flex; align-items: center; justify-content: space-between; gap: 15px;}
 #home .containerForm #formLogin .containerInput .boxInputLogin .iconUser {max-width: 24px; width: 100%; height: auto;}
 #home .containerForm #formLogin .containerInput .boxInputLogin .iconPassword {max-width: 24px; width: 100%; height: auto;}
-#home .containerForm #formLogin .containerInput .boxInputLogin .inputLogin {border: none; font-size: 14px; text-align: left; color: #212121; padding: 0 5px 12px; width: 80%;}
-#home .containerForm #formLogin .containerInput .boxInputLogin .inputLogin::placeholder {font-size: 14px; text-align: left; color: rgba(0, 0, 0, .5);}
+#home .containerForm #formLogin .containerInput .boxInputLogin .inputLogin {border: none; font-size: 14px; text-align: left; color: var(--darkGray); padding: 0 5px 12px; width: 80%;}
+#home .containerForm #formLogin .containerInput .boxInputLogin .inputLogin::placeholder {font-size: 14px; text-align: left; color: var(--blackOpacityFifty);}
 #home .containerForm #formLogin .containerInput .boxInputLogin .inputLogin:focus {outline-width: 0;}
 #home .containerForm .defaultBtn {margin-top: 45px;}

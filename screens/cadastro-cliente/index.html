@@ -1,102 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/nav.css">
-    <link rel="stylesheet" href="./style/cadastra-cliente.css">
-    <title>Locadora Univesp - Cadastra Cliente</title>
-</head>
-<body>
-    <nav>
-        <div>
-            <img src="./resources/logo-40x40.png" alt="Logotipo da Locadora Univesp">
-            <h1 class="color-white fontsize-24 fontstyle-cursive">Locadora Univesp</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body role="body">
+    <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <!-- DON'T REMOVE -->
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
+      <div id="cadastroCliente">
+        <div class="indent">
+          <h1>Cadastre-se</h1>
+          <form action="javascript:;" id="formCadastro">
+            <div class="boxInput">
+              <label for="name">Nome<abbr title="required">*</abbr>:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="inputCadastro"
+                placeholder="Ex: José da Silva"
+              />
+            </div>
+
+            <div class="boxInput">
+              <label for="age">Idade<abbr title="required">*</abbr>:</label>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                class="inputCadastro"
+                placeholder="Ex: 30"
+              />
+            </div>
+
+            <div class="boxAddress">
+              <div class="w80">
+                <label for="address"
+                  >Endereço<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="inputCadastro"
+                  placeholder="Ex: R. Campos"
+                />
+              </div>
+
+              <div class="w20">
+                <label for="number"
+                  >Número<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="number"
+                  id="number"
+                  class="inputCadastro"
+                  placeholder="Ex: 125"
+                />
+              </div>
+
+              <div class="w50">
+                <label for="district"
+                  >Bairro<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="district"
+                  id="district"
+                  class="inputCadastro"
+                  placeholder="Ex: Matão"
+                />
+              </div>
+
+              <div class="w50">
+                <label for="complement"
+                  >Complemento<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="complement"
+                  id="complement"
+                  class="inputCadastro"
+                  placeholder="Ex: Apartamento, condomínio etc"
+                />
+              </div>
+
+              <div class="w60">
+                <label for="city">Cidade<abbr title="required">*</abbr>:</label>
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  class="inputCadastro"
+                  placeholder="Ex: São Paulo"
+                />
+              </div>
+
+              <div class="w40">
+                <label for="state"
+                  >Estado<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  list="states"
+                  id="state"
+                  name="state"
+                  class="inputCadastro"
+                  placeholder="Ex: SP"
+                />
+
+                <datalist id="states">
+                  <option value="SP"></option>
+                  <option value="RJ"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              role="button"
+              aria-label="Botão cadastrar"
+              onclick="register()"
+              class="defaultBtn"
+            >
+              Cadastrar
+            </button>
+          </form>
         </div>
-        <ul class="color-white fontsize-24 fontstyle-cursive menu">
-            <li>
-                <a href="#">Início</a>
-            </li>
-            <li>
-                <a href="#">Clientes</a>
-                <ul>
-                    <li>
-                        <a href="#">Consultar</a>
-                    </li>
-                    <li>
-                        <a href="#">Cadastrar</a>
-                    </li>
-                    <li>
-                        <a href="#">Deletar</a>
-                    </li>
-                    <li>
-                        <a href="#">Editar</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Produtos</a>
-                <ul>
-                    <li>
-                        <a href="#">Consultar</a>
-                    </li>
-                    <li>
-                        <a href="#">Cadastrar</a>
-                    </li>
-                    <li>
-                        <a href="#">Deletar</a>
-                    </li>
-                    <li>
-                        <a href="#">Editar</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <div id ="last" class="flex-column fontsize-24 fontstyle-cursive color-white">
-            <p>Operador: Admin</p>
-            <div id="sair">
-                <a href="#">
-                    Sair
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                        <path d="M8.25 0V2.75H19.25V16.5H8.25V19.25H22V0H8.25ZM5.5 5.5L0 9.625L5.5 13.75V11H16.5V8.25H5.5V5.5Z" fill="white"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <div id ="main-frame">
-        
-        <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="34" viewBox="0 0 39 34" fill="none">
-                <path d="M14.5739 0V9.71595C34.0058 9.71595 38.8638 19.6748 38.8638 34.0058C36.3376 24.387 29.1478 19.4319 19.4319 19.4319H14.5739V29.1479L-4.19617e-05 13.7967L14.5739 0Z" fill="black"/>
-            </svg>
-        </a>
-
-        <div class="flex-row">
-            <h2 class="fontsize-24 fontstyle-cursive color-custom-grey">Cadastrar Cliente</h2>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                <path d="M12 0.5C8.7 0.5 6 3.86 6 8C6 12.14 8.7 15.5 12 15.5C15.3 15.5 18 12.14 18 8C18 3.86 15.3 0.5 12 0.5ZM5.73 15.5C2.55 15.65 0 18.26 0 21.5V24.5H24V21.5C24 18.26 21.48 15.65 18.27 15.5C16.65 17.33 14.43 18.5 12 18.5C9.57 18.5 7.35 17.33 5.73 15.5Z" fill="#767676"/>
-            </svg>
-        </div>
-
-        <form action="#" class="flex-column">
-            <div>
-                <label for="nome" class="fontstyle-cursive fontsize-18">Nome<abbr title="required">*</abbr>:</label>
-                <input type="text" name="nome" id="nome" class="inputwidth-392">
-            </div>
-
-            <div>
-                <label for="idade" class="fontstyle-cursive fontsize-18">Idade<abbr title="required">*</abbr>:</label>
-                <input type="number" name="idade" id="idade" class="inputwidth-56">
-            </div>
-
-            <div>
-                <label for="endereco" class="fontstyle-cursive fontsize-18">Endereço<abbr title="required">*</abbr>:</label>
-                <input type="text" name="endereco" id="endereco" class="inputwidth-392">
-            </div>
-        </form>
-    </div>
-</body>
+      </div>
+    </main>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
+    <!-- DON'T REMOVE -->
+    <script src="./../../assets/scripts/main.js"></script>
+    <!-- DON'T REMOVE -->
+  </body>
 </html>

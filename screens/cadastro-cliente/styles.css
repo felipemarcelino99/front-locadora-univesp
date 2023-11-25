@@ -1,54 +1,34 @@
-body {
-    background-image: url("resources/bg-transparency.png");
-    background-position: center;
-    background-size: auto;
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
 }
 
-#main-frame {
-    min-width: 500px;
-    max-width: 800px;
-    margin: 48px auto;
-    border-radius: 10px;
-    background-color: white;
-}
+#cadastroCliente { min-height: 100vh; width: 100%; max-width: 100%; background: linear-gradient(180deg, rgba(20, 155, 252, 1) 0%, rgba(0, 120, 240, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px;}
+#cadastroCliente h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--white); font-weight: bold;}
+#cadastroCliente #formCadastro {padding: 50px; border-radius: 20px; background-color: var(--white); max-width: 800px; width: 100%; margin: 0 auto;}
+#cadastroCliente #formCadastro .boxInput {width: 100%; max-width: 100%; margin-bottom: 20px;}
+#cadastroCliente #formCadastro label {display: block; font-size: 14px; font-weight: bold; text-transform: uppercase; text-align: left; color: var(--blackOpacityFifty); margin-bottom: 10px;}
+#cadastroCliente #formCadastro .inputCadastro {border-radius: 8px; padding: 8px 15px; width: calc(100% - 30px); max-width: calc(100% - 30px); text-align: left; font-size: 12px; color: var(--darkGray); border: 1px solid var(--blackOpacityTwentyFive);}
+#cadastroCliente #formCadastro .inputCadastro::placeholder {color: var(--blackOpacityFifty);}
+#cadastroCliente #formCadastro .inputCadastro:focus {border: 1px solid var(--darkGray); color: var(--darkGray);}
+#cadastroCliente #formCadastro .boxAddress {display: flex; align-items: center; flex-wrap: wrap; gap: 15px;}
+#cadastroCliente #formCadastro .boxAddress>div {display: inline-block;}
+#cadastroCliente #formCadastro .boxAddress .w20 {width: 20%;}
+#cadastroCliente #formCadastro .boxAddress .w40 {width: 38%;}
+#cadastroCliente #formCadastro .boxAddress .w50 {width: 49%;}
+#cadastroCliente #formCadastro .boxAddress .w60 {width: 60%;}
+#cadastroCliente #formCadastro .boxAddress .w80 {width: 78%;}
+#cadastroCliente #formCadastro .defaultBtn {width: fit-content; margin: 50px auto 0;}
 
-#main-frame>a>svg {
-    margin: 16px;
-}
 
-#main-frame>div {
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
 
-#main-frame>div>svg {
-    width: 24px;
-    height: 24px;
-}
 
-form {
-    display: flex;
-    margin: auto;
-    /* width: 1000px; */
-    border: 1px solid green;
-    justify-content: center;
-    align-items: center;
-}
 
-form>div {
-    display: flex;
-    /*     width: 280px; */
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-}
 
-form>div>label {
-    display: flex;
-    justify-content: flex-start;
-}
 
-form>div>input {
-    border-radius: 10px;
-}
+
+

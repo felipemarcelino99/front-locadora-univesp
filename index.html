@@ -16,7 +16,7 @@
       role="heading"
       aria-label="Cabeçalho"
     ></header>
-    <main id="wrapper" aria-label="Conteúdo da página">
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
       <div id="home">
         <section class="indent">
           <div class="containerForm">
@@ -48,7 +48,8 @@
                 <label for="email">Senha</label>
                 <div class="boxInputLogin">
                   <input
-                    name="senha"
+                    id="password"
+                    name="password"
                     type="password"
                     placeholder="Insira sua senha"
                     value=""
@@ -69,12 +70,20 @@
                 </div>
               </div>
             </form>
-            <button type="submit" class="defaultBtn">Entrar</button>
+            <button
+              type="submit"
+              onclick="login()"
+              class="defaultBtn"
+              role="button"
+            >
+              Entrar
+            </button>
           </div>
         </section>
       </div>
     </main>
-    <footer id="footer-container"></footer>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
     <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/functions.js"></script>
   </body>
 </html>

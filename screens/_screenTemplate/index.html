@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Name</title>
-    <link rel="stylesheet" href="./assets/styles/normalize.css" />
-    <link rel="stylesheet" href="./assets/styles/main.css" />
-    <link rel="stylesheet" href="./layout/header/styles.css" />
-    <link rel="stylesheet" href="./layout//footer/styles.css" />
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body role="body">
     <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
-    <header id="header-container"></header>
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
     <!-- DON'T REMOVE -->
-    <main id="wrapper">
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
       <div class="indent">
         <h1>Clone me for create a new screen</h1>
         <!-- YOUR CONTENT HERE -->
       </div>
     </main>
-    <footer id="footer-container"></footer>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
     <!-- DON'T REMOVE -->
-    <script src="./assets/scripts/main.js"></script>
+    <script src="./../../assets/scripts/main.js"></script>
     <!-- DON'T REMOVE -->
   </body>
 </html>

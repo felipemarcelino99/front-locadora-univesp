@@ -7,7 +7,7 @@
     --blackOpacityTwentyFive: rgba(0,0,0,.5);
 }
 
-#wrapper {min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 90px;}
+#wrapper {min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 90px; overflow: hidden;}
 .indent {max-width: 1080px; width: 100%; margin: 0 auto;}
 image {display: block; width: 100%; max-width: 100%; height: 100%;}
 

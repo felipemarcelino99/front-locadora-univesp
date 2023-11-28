@@ -1,0 +1,8 @@
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
+}

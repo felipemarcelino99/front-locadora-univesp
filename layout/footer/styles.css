@@ -1,1 +1,11 @@
-#footer {background-color: red;}
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
+}
+
+#footer {background-color: var(--white); padding: 15px; display: flex; align-items: center; justify-content: center; width: 100%;}
+#footer span {color: var(--DefaultBlue); font-weight: bold; text-align: center; font-size: 12px;}

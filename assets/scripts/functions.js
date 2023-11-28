@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://locadora-0uhi.onrender.com";
 
 function checkIsAuth() {
   const authData = localStorage.getItem("auth");
@@ -16,7 +16,7 @@ function checkIsAuth() {
 
       // Realizar ações com base nos dados de autenticação, por exemplo:
       // Redirecionar para a página de perfil
-      window.location.href = "screens/login";
+      window.location.href = "screens/signedHome";
       return;
     } else {
       // Se não houver dados de autenticação, redirecionar para a página de login
@@ -34,7 +34,7 @@ function login() {
 
   // Criar um objeto JavaScript para representar os dados
   const data = {
-    email: email,
+    login: email,
     password: password,
   };
 
@@ -42,7 +42,7 @@ function login() {
   const jsonData = JSON.stringify(data);
 
   // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/client`, {
+  fetch(`${BASE_URL}/user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -73,11 +73,11 @@ function register() {
     name: name,
     age: age,
     address: address,
-    number: number,
-    district: district,
-    complement: complement,
-    city: city,
-    state: state,
+    // number: number,
+    // district: district,
+    // complement: complement,
+    // city: city,
+    // state: state,
   };
 
   // Converter o objeto JavaScript para uma string JSON

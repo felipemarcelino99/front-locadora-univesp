@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body role="body">
+    <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <!-- DON'T REMOVE -->
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
+      <div id="consultaCliente">
+        <div class="indent">
+          <h1>Consultar cliente</h1>
+          <div id="exibeClientes">
+            <form action="javascript:;">
+              <div class="boxInput">
+                <label for="name">Pesquisar por nome:<abbr title="required"></abbr></label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="inputName"
+                  placeholder="Ex: José da Silva"
+                />
+              </div>
+              <button
+                type="submit"
+                role="button"
+                aria-label="Botão cadastrar"
+                onclick="cadastrarCliente()"
+                class="defaultBtn"
+              >
+                Consultar
+              </button>
+            </form>
+            <table id="tabelaClientes" name="tabelaClientes">
+              <tr> 
+                 <th id="headerNome">Nome</th>
+                 <th id="headerIdade">Idade</th>
+                 <th id="headerEndereco">Endereço</th>
+               </tr>
+             </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
+    <!-- DON'T REMOVE -->
+    <script src="./../../assets/scripts/main.js"></script>
+    <script src="./../../assets/scripts/functions.js"></script>
+    <script src="./script.js"></script>
+    <!-- DON'T REMOVE -->
+  </body>
+</html>

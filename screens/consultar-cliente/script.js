@@ -16,7 +16,7 @@ async function renderUsers() {
   let users = await getUsers();
   let html = '';
   users.forEach(user => {
-    let htmlSegment = `<tr>
+    let htmlSegment = `<tr id="${user.id}" name="${user.id}" onClick="exibirOpcoes(this);">
       <td>${user.name}</td>
       <td>${user.age}</td>
       <td>${user.address}</td>
@@ -30,3 +30,8 @@ async function renderUsers() {
 }
 
 renderUsers();
+
+function exibirOpcoes(element){
+  let selectedId = element.id;
+  alert(selectedId);
+}

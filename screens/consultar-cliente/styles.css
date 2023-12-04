@@ -76,9 +76,13 @@ table {
   }
 
   #headerNome {
-    width: 300px;
+    width: 120px;
   }
 
   #headerIdade {
-    width: 64px;
+    width: 32px;
+  }
+
+  #headerEndereco {
+    width: 40px;
   }

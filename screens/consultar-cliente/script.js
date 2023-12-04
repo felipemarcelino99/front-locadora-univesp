@@ -26,7 +26,7 @@ async function renderUsers() {
   });
 
   let container = document.querySelector('#tabelaClientes');
-  container.innerHTML = html;
+  container.innerHTML += html;
 }
 
 renderUsers();

@@ -1,6 +1,3 @@
-/* const BASE_URL = "https://locadora-0uhi.onrender.com"; */
-const BASE_URL = "http://localhost:8080";
-
 function checkIsAuth() {
   const authData = localStorage.getItem("auth");
   const hasCheckedAuth = sessionStorage.getItem("hasCheckedAuth");
@@ -8,19 +5,19 @@ function checkIsAuth() {
   if (!hasCheckedAuth) {
     sessionStorage.setItem("hasCheckedAuth", "true");
     if (authData) {
-          // Se existirem dados de autenticação, realizar ações correspondentes
-          // Por exemplo, redirecionar para a página de perfil ou exibir conteúdo restrito
+      // Se existirem dados de autenticação, realizar ações correspondentes
+      // Por exemplo, redirecionar para a página de perfil ou exibir conteúdo restrito
 
-          // Converter a string JSON de volta para um objeto JavaScript (se necessário)
+      // Converter a string JSON de volta para um objeto JavaScript (se necessário)
       const authObject = JSON.parse(authData);
 
-          // Realizar ações com base nos dados de autenticação, por exemplo:
-          // Redirecionar para a página de perfil
+      // Realizar ações com base nos dados de autenticação, por exemplo:
+      // Redirecionar para a página de perfil
       /* window.location.href = "../../screens/signedHome"; */
       return;
     } else {
-          // Se não houver dados de autenticação, redirecionar para a página de login
-      /* window.location.href = "../../index.html"; */
+      // Se não houver dados de autenticação, redirecionar para a página de login
+      window.location.href = "../../index.html";
       return;
     }
   }
@@ -72,7 +69,18 @@ function register() {
   const data = {
     name: name,
     age: age,
-    address: address,
+    address:
+      address +
+      ", " +
+      number +
+      ", " +
+      district +
+      ", " +
+      complement +
+      ", " +
+      city +
+      ", " +
+      state,
     // number: number,
     // district: district,
     // complement: complement,
@@ -88,6 +96,8 @@ function register() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      // Authorization:
+      //   "Basic TE9DQURPUkE6JDJhJDEyJHJaZktiTlNON3o0VjZHMHd1R2xnRy4xL2ZackwuZjg4QXVaekd4ODRhUnNuOW9YRTh5allT",
     },
     body: jsonData,
   })

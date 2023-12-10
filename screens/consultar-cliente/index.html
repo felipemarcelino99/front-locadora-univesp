@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>uniVHSp - Consultar cliente</title>
+    <link rel="stylesheet" href="./../../assets/styles/fonts.css" />
     <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
     <link rel="stylesheet" href="./../../assets/styles/main.css" />
     <link rel="stylesheet" href="./../../layout/header/styles.css" />
@@ -26,13 +27,19 @@
           <div id="exibeClientes">
             <form action="javascript:;">
               <div class="boxInput">
-                <label for="name">Pesquisar por nome:<abbr title="required"></abbr></label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   class="inputName"
-                  placeholder="Ex: José da Silva"
+                  placeholder="Pesquisa por nome: José da Silva"
+                />
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="inputName"
+                  placeholder="Pesquisa por endereço: R. Dos Campos"
                 />
               </div>
               <button
@@ -42,16 +49,23 @@
                 onclick="cadastrarCliente()"
                 class="defaultBtn"
               >
-                Consultar
+                <img
+                  src="./../../assets/images/icons/search.png"
+                  alt="Ícone Pesquisar"
+                  width="16"
+                  height="16"
+                />
               </button>
             </form>
             <table id="tabelaClientes" name="tabelaClientes">
-              <tr> 
-                 <th id="headerNome">Nome</th>
-                 <th id="headerIdade">Idade</th>
-                 <th id="headerEndereco">Endereço</th>
-               </tr>
-             </table>
+              <tr>
+                <th id="headerNome">Nome</th>
+                <th id="headerIdade">Idade</th>
+                <th id="headerEndereco">Endereço</th>
+                <th id="headerEdit"></th>
+                <th id="headerRemove"></th>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

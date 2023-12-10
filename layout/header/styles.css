@@ -32,6 +32,6 @@
 #header #hideMenu #menu ul,
 #header #hideMenu #menu ul li {list-style: none;}
 #header #hideMenu #menu ul li + li {margin-top: 20px;}
-#header #hideMenu #menu ul li a {color: var(--white); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5; font-size: 16px; text-decoration: none; transition: all .4s ease-in;}
+#header #hideMenu #menu ul li a {color: var(--white); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; font-size: 16px; text-decoration: none; transition: all .4s ease-in;}
 #header #hideMenu #menu ul li a:hover {text-decoration: underline; color: #fefefe; transform: scale(1.1); transition: all .4s ease-out;}
 #header #hideMenu.open {width: 250px; right: 0; opacity: 1; transition: all .4s ease;}

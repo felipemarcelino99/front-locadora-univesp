@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Jost';
+    src: url('./../fonts/Jost-Bold.eot');
+    src: url('./../fonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/Jost-Bold.woff2') format('woff2'),
+        url('./../fonts/Jost-Bold.woff') format('woff'),
+        url('./../fonts/Jost-Bold.ttf') format('truetype'),
+        url('./../fonts/Jost-Bold.svg#Jost-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('./../fonts/Jost-BoldItalic.eot');
+    src: url('./../fonts/Jost-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/Jost-BoldItalic.woff2') format('woff2'),
+        url('./../fonts/Jost-BoldItalic.woff') format('woff'),
+        url('./../fonts/Jost-BoldItalic.ttf') format('truetype'),
+        url('./../fonts/Jost-BoldItalic.svg#Jost-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('./../fonts/Jost-Medium.eot');
+    src: url('./../fonts/Jost-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/Jost-Medium.woff2') format('woff2'),
+        url('./../fonts/Jost-Medium.woff') format('woff'),
+        url('./../fonts/Jost-Medium.ttf') format('truetype'),
+        url('./../fonts/Jost-Medium.svg#Jost-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('./../fonts/Jost-Regular.eot');
+    src: url('./../fonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/Jost-Regular.woff2') format('woff2'),
+        url('./../fonts/Jost-Regular.woff') format('woff'),
+        url('./../fonts/Jost-Regular.ttf') format('truetype'),
+        url('./../fonts/Jost-Regular.svg#Jost-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('./../fonts/Jost-MediumItalic.eot');
+    src: url('./../fonts/Jost-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/Jost-MediumItalic.woff2') format('woff2'),
+        url('./../fonts/Jost-MediumItalic.woff') format('woff'),
+        url('./../fonts/Jost-MediumItalic.ttf') format('truetype'),
+        url('./../fonts/Jost-MediumItalic.svg#Jost-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik Mono One';
+    src: url('./../fonts/RubikMonoOne-Regular.eot');
+    src: url('./../fonts/RubikMonoOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./../fonts/RubikMonoOne-Regular.woff2') format('woff2'),
+        url('./../fonts/RubikMonoOne-Regular.woff') format('woff'),
+        url('./../fonts/RubikMonoOne-Regular.ttf') format('truetype'),
+        url('./../fonts/RubikMonoOne-Regular.svg#RubikMonoOne-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

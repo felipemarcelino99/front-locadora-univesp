@@ -1,5 +1,5 @@
-function cadastrarCliente(){
-    // Obter os valores dos campos do formulário
+function cadastrarCliente() {
+  // Obter os valores dos campos do formulário
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;
   const address = document.getElementById("address").value;
@@ -13,7 +13,18 @@ function cadastrarCliente(){
   const data = {
     name: name,
     age: age,
-    address: address,
+    address:
+      address +
+      ", " +
+      number +
+      ", " +
+      district +
+      ", " +
+      complement +
+      ", " +
+      city +
+      ", " +
+      state,
     // number: number,
     // district: district,
     // complement: complement,
@@ -35,11 +46,12 @@ function cadastrarCliente(){
     .then((response) => {
       response.json();
       console.log(response);
-      if(response.status == 201){
+      if (response.status == 201) {
         alert("Cliente cadastrado com sucesso!");
-      }
-      else{
-        alert("Houve um problema ao cadastrar o cliente. " + response.statusText);
+      } else {
+        alert(
+          "Houve um problema ao cadastrar o cliente. " + response.statusText
+        );
       }
     })
     .catch((error) => console.error("Erro:", error));

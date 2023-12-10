@@ -1,4 +1,4 @@
-// loadLayout.js
+const BASE_URL = "https://locadora-0uhi.onrender.com";
 
 function loadHeader() {
   fetch("./../../layout/header/index.html")

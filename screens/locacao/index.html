@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locação</title>
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/fonts.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body role="body">
+    <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <!-- DON'T REMOVE -->
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
+      <div id="locacao">
+        <div class="indent">
+          <h1>Locar Filme</h1>
+          <form action="javascript:;" id="formCadastro">
+            <div class="boxInput">
+              <label for="name"
+                >Nome do cliente<abbr title="required">*</abbr>:</label
+              >
+              <input id="userId" name="userId" value="" type="hidden" />
+              <input
+                list="userNames"
+                id="userName"
+                name="userName"
+                class="inputCadastro"
+                placeholder="Ex: José da Silva"
+              />
+
+              <datalist id="userNames"></datalist>
+            </div>
+
+            <div class="boxInput">
+              <label for="name"
+                >Nome do filme<abbr title="required">*</abbr>:</label
+              >
+              <input id="movieId" name="movieId" value="" type="hidden" />
+              <input
+                list="movieNames"
+                id="movieName"
+                name="movieName"
+                class="inputCadastro"
+                placeholder="Ex: Jurassic Park"
+              />
+
+              <datalist id="movieNames"></datalist>
+            </div>
+
+            <button
+              type="submit"
+              role="button"
+              aria-label="Botão cadastrar"
+              onclick="locarFilme()"
+              class="defaultBtn"
+            >
+              Locar
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
+    <!-- DON'T REMOVE -->
+    <script src="./../../assets/scripts/main.js"></script>
+    <script src="./../../assets/scripts/functions.js"></script>
+    <script src="./script.js"></script>
+    <!-- DON'T REMOVE -->
+  </body>
+</html>

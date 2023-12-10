@@ -1,0 +1,11 @@
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
+}
+
+#locacao { min-height: 100vh; width: 100%; max-width: 100%; background: linear-gradient(180deg, rgba(20, 155, 252, 1) 0%, rgba(0, 120, 240, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px;}
+#locacao h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--white); font-weight: bold;}

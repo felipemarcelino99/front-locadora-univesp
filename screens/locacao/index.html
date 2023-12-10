@@ -42,26 +42,41 @@
             </div>
 
             <div class="boxInput">
-              <label for="name"
-                >Nome do filme<abbr title="required">*</abbr>:</label
-              >
-              <input id="movieId" name="movieId" value="" type="hidden" />
-              <input
-                list="movieNames"
-                id="movieName"
-                name="movieName"
-                class="inputCadastro"
-                placeholder="Ex: Jurassic Park"
-              />
+              <div>
+                <label for="name"
+                  >Nome/ID do produto<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  id="productId"
+                  name="productId[]"
+                  value=""
+                  type="hidden"
+                />
+                <input
+                  list="productNames"
+                  id="productName"
+                  name="productName"
+                  class="inputCadastro"
+                  placeholder="Ex: Jurassic Park"
+                />
 
-              <datalist id="movieNames"></datalist>
+                <datalist id="productNames"></datalist>
+              </div>
+            </div>
+
+            <div class="boxInput">
+              <select name="filter" id="filter" onchange="filterCategory(this.value)">
+                <option value="all">Todos</option>
+                <option value="movies">Filmes</option>
+                <option value="games">Jogos</option>
+              </select>
             </div>
 
             <button
               type="submit"
               role="button"
               aria-label="Botão cadastrar"
-              onclick="locarFilme()"
+              onclick="locar()"
               class="defaultBtn"
             >
               Locar

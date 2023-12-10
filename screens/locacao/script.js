@@ -7,7 +7,7 @@ async function getUsers() {
         "Content-Type": "application/json",
       },
     });
-    return await response.json();
+    return response.json();
   } catch (error) {
     console.log(error);
   }
@@ -44,34 +44,86 @@ renderUsers();
 
 async function getMovies() {
   try {
-    let response = await fetch(`${BASE_URL}/movies`, {
+    let response = await fetch(`${BASE_URL}/filme`, {
       /* mode: 'no-cors', */
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
-    return await response.json();
+    return response.json();
   } catch (error) {
     console.log(error);
   }
 }
 
-async function renderMovies() {
-  let movies = await getMovies();
-  let datalist = document.querySelector("#movieNames");
+async function getGames() {
+  try {
+    let response = await fetch(`${BASE_URL}/jogo`, {
+      /* mode: 'no-cors', */
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-  movies.forEach((user) => {
-    let option = document.createElement("option");
-    option.value = user.name;
-    option.setAttribute("data-id", user.id);
-    datalist.appendChild(option);
-  });
+let movies = [];
+let games = [];
 
-  const movieNameInput = document.getElementById("movieName");
-  const movieId = document.getElementById("movieId");
+function clearProducts(list) {
+  list.innerHTML = "";
+}
 
-  movieNameInput.addEventListener("input", (event) => {
+async function renderProducts(filter) {
+  movies = await getMovies();
+  games = await getGames();
+  let datalist = document.querySelector("#productNames");
+  clearProducts(datalist);
+
+  if (filter === "all") {
+    movies.forEach((movie, index) => {
+      let option = document.createElement("option");
+      option.value = movie.name;
+      option.innerText = index;
+      option.setAttribute("data-id", movie.id);
+      datalist.appendChild(option);
+    });
+    games.forEach((movie, index) => {
+      let option = document.createElement("option");
+      option.value = movie.name;
+      option.innerText = index;
+      option.setAttribute("data-id", movie.id);
+      datalist.appendChild(option);
+    });
+  } else if (filter === "games") {
+    games.forEach((movie, index) => {
+      let option = document.createElement("option");
+      option.value = movie.name;
+      option.innerText = index;
+      option.setAttribute("data-id", movie.id);
+      datalist.appendChild(option);
+    });
+  } else if (filter === "movies") {
+    movies.forEach((movie, index) => {
+      let option = document.createElement("option");
+      option.value = movie.name;
+      option.innerText = index;
+      option.setAttribute("data-id", movie.id);
+      datalist.appendChild(option);
+    });
+  } else {
+    alert("Insira uma categoria válida!");
+  }
+
+  const productNameInput = document.getElementById("productName");
+  const movieId = document.getElementById("productId");
+
+  productNameInput.addEventListener("input", (event) => {
     let selectedName = event.target.value;
     let selectedOption = Array.from(datalist.options).find(
       (option) => option.value === selectedName
@@ -84,7 +136,11 @@ async function renderMovies() {
   });
 }
 
-renderMovies();
+renderProducts("all");
+
+function filterCategory(value) {
+  renderProducts(value);
+}
 
 function locar() {
   // Obter os valores dos campos do formulário
@@ -101,7 +157,7 @@ function locar() {
   const jsonData = JSON.stringify(data);
 
   // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/movies/reserve`, {
+  fetch(`${BASE_URL}/locacao/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

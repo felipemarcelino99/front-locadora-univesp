@@ -20,6 +20,20 @@ async function renderUsers() {
   populateTable(users);
 }
 
+async function removeUser(id) {
+  try {
+    await fetch(`${BASE_URL}/client/${id}`, {
+      /* mode: 'no-cors', */
+      method: "DELETE",
+    });
+    // Verificar o código de resposta, que deve ser 200 ou 204 para deletado com sucesso.
+    alert("Cliente excluído com sucesso!");
+  } catch (error) {
+    alert("Houve um problema ao tentar excluir este cliente.");
+    console.log(error);
+  }
+}
+
 function populateTable(items) {
   let container = document.querySelector("#tabelaClientes");
   /* container.innerHTML == ""; */
@@ -62,13 +76,20 @@ function populateTable(items) {
 renderUsers();
 
 function edit(element) {
+  // Criar uma página para edição e redirecionar para ela aqui
   let selectedId = element.id;
   console.log(selectedId);
 }
 
 function remove(element) {
-  let selectedId = element.parentNode;
-  console.log(selectedId);
+  /* let selectedId = element.parentNode; */
+  let message = `Tem certeza de que deseja excluir este cliente?\n[${element.id}] ${element.name}`;
+  if(confirm(message)){
+    removeUser(element.id);
+  }
+  else {
+    alert("Exclusão cancelada!");
+  }
 }
 
 function exibirOpcoes(element) {

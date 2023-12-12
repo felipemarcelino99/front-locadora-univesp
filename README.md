@@ -1,6 +1,6 @@
 <h1 align="center"> 📼 Locadora Univesp [FRONT] 🕹️ </h1>
 <p align="center">Este é o front-end do projeto Locadora Univesp, idealizado por um grupo de estudantes em busca de aprimorar seus conhecimentos.</p>
-<p align="center">Locadora Univesp [BACK]: <a href="https://bruamado.github.io/calculadora-univesp/">https://github.com/DenilsonMarcio/locadora_univesp</a></h2>
+<a align="center" href="https://github.com/DenilsonMarcio/locadora_univesp"><p align="center">Clique aqui para acessar o repositório back-end do projeto</p></a>
 
 
 # 📖Integrantes do projeto

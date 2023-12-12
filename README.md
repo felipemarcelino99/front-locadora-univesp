@@ -3,7 +3,7 @@
 <a align="center" href="https://github.com/DenilsonMarcio/locadora_univesp"><p align="center">Clique aqui para acessar o repositório back-end do projeto</p></a>
 
 
-# 📖Integrantes do projeto
+<h2>📖Integrantes do projeto</h2>
 
 - <details>
     <summary>Alex Almeida

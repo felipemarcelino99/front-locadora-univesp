@@ -1,4 +1,6 @@
 let users;
+let tabelaClientes = document.querySelector("#tabelaClientes");
+let tabelaClientesHeader = tabelaClientes.innerHTML;
 
 async function getUsers() {
   try {
@@ -28,6 +30,7 @@ async function removeUser(id) {
     });
     // Verificar o código de resposta, que deve ser 200 ou 204 para deletado com sucesso.
     alert("Cliente excluído com sucesso!");
+    location.reload();
   } catch (error) {
     alert("Houve um problema ao tentar excluir este cliente.");
     console.log(error);
@@ -35,13 +38,10 @@ async function removeUser(id) {
 }
 
 function populateTable(items) {
-  let container = document.querySelector("#tabelaClientes");
-  /* container.innerHTML == ""; */
-
   let html = "";
   items.forEach((item) => {
-    let htmlSegment = `<tr id="${item.id}" name="${item.id}" onClick="exibirOpcoes(this);">
-      <input type="hidden" name="user-${item.id}" value="${item.id}">
+    let htmlSegment = `<tr id="${item.id}" name="${item.name}">
+      <input type="hidden" name="user-${item.name}" id="user-${item.id}" value="${item.id}">
       <td>${item.name}</td>
       <td>${item.age}</td>
       <td>${item.address}</td>
@@ -69,8 +69,13 @@ function populateTable(items) {
 
     html += htmlSegment;
   });
-
-  container.innerHTML = html;
+  if (html){
+    tabelaClientes.innerHTML = tabelaClientesHeader + html;
+  }
+  else{
+    alert("Cliente não encontrado!");
+    tabelaClientes.innerHTML = "<tr>Cliente não encontrado!</tr>"
+  }
 }
 
 renderUsers();
@@ -82,19 +87,14 @@ function edit(element) {
 }
 
 function remove(element) {
-  /* let selectedId = element.parentNode; */
-  let message = `Tem certeza de que deseja excluir este cliente?\n[${element.id}] ${element.name}`;
+  let selectedElement = element.parentNode.parentNode
+  let message = `Tem certeza de que deseja excluir este cliente?\n[${selectedElement.id}] ${selectedElement.getAttribute("name")}`;
   if(confirm(message)){
-    removeUser(element.id);
+    removeUser(selectedElement.id);
   }
   else {
     alert("Exclusão cancelada!");
   }
-}
-
-function exibirOpcoes(element) {
-  let selectedId = element.parentNode;
-  alert(selectedId);
 }
 
 function clearOther(element){

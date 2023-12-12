@@ -88,7 +88,7 @@ function edit(element) {
 
 function remove(element) {
   let selectedElement = element.parentNode.parentNode
-  let message = `Tem certeza de que deseja excluir este cliente?\n[${selectedElement.id}] ${selectedElement.getAttribute("name")}`;
+  let message = `Tem certeza de que deseja excluir este cliente?\n${selectedElement.getAttribute("name")} [id: ${selectedElement.id}]`;
   if(confirm(message)){
     removeUser(selectedElement.id);
   }

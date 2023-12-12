@@ -17,7 +17,7 @@ function checkIsAuth() {
       return;
     } else {
       // Se não houver dados de autenticação, redirecionar para a página de login
-      window.location.href = "../../index.html";
+      //window.location.href = "../../index.html";
       return;
     }
   }

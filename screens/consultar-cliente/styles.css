@@ -11,9 +11,9 @@
 #consultaCliente h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--white); font-weight: bold;}
 #consultaCliente #exibeClientes {padding: 50px; border-radius: 20px; background-color: var(--white); max-width: 800px; width: 100%; margin: 0 auto;}
 #consultaCliente #exibeClientes .boxInput {width: 100%; max-width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 15px;}
-#consultaCliente #exibeClientes .inputName {border-radius: 8px; padding: 8px 15px; width: calc(100% - 30px); max-width: calc(100% - 30px); text-align: left; font-size: 12px; color: var(--darkGray); border: 1px solid var(--blackOpacityTwentyFive);}
-#consultaCliente #exibeClientes .inputName::placeholder {color: var(--blackOpacityFifty);}
-#consultaCliente #exibeClientes .inputName:focus {border: 1px solid var(--darkGray); color: var(--darkGray);}
+#consultaCliente #exibeClientes .input {border-radius: 8px; padding: 8px 15px; width: calc(100% - 30px); max-width: calc(100% - 30px); text-align: left; font-size: 12px; color: var(--darkGray); border: 1px solid var(--blackOpacityTwentyFive);}
+#consultaCliente #exibeClientes .input::placeholder {color: var(--blackOpacityFifty);}
+#consultaCliente #exibeClientes .input:focus {border: 1px solid var(--darkGray); color: var(--darkGray);}
 #consultaCliente #exibeClientes .defaultBtn {width: fit-content; height: 32px; padding: 15px; margin-left: 15px; display: inline-flex; align-items: center;}
 
 form {

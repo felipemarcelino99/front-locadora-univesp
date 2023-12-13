@@ -30,7 +30,7 @@ async function removeUser(id) {
     });
     // Verificar o código de resposta, que deve ser 200 ou 204 para deletado com sucesso.
     alert("Cliente excluído com sucesso!");
-    location.reload();
+    renderUsers();
   } catch (error) {
     alert("Houve um problema ao tentar excluir este cliente.");
     console.log(error);
@@ -40,7 +40,7 @@ async function removeUser(id) {
 function populateTable(items) {
   let html = "";
   items.forEach((item) => {
-    let htmlSegment = `<tr id="${item.id}" name="${item.name}">
+    let htmlSegment = `<tr id="${item.id}" name="${item.name}" age="${item.age}" address="${item.address}">
       <input type="hidden" name="user-${item.name}" id="user-${item.id}" value="${item.id}">
       <td>${item.name}</td>
       <td>${item.age}</td>
@@ -81,9 +81,9 @@ function populateTable(items) {
 renderUsers();
 
 function edit(element) {
-  // Criar uma página para edição e redirecionar para ela aqui
-  let selectedId = element.id;
-  console.log(selectedId);
+  //Pega a linha da tabela a partir do botão editar que foi clicado:
+  let selectedRow = element.parentNode.parentNode
+  window.location.replace(`../altera-cliente/index.html?id=${selectedRow.id}`);
 }
 
 function remove(element) {

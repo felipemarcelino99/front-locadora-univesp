@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/fonts.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body role="body">
+    <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <!-- DON'T REMOVE -->
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
+      <div id="alteraCliente">
+        <div class="indent">
+          <h1>Alterar cliente</h1>
+          <form action="javascript:;" id="formCadastro">
+            <div class="boxInput">
+
+              <label for="name">Nome<abbr title="required">*</abbr>:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="inputCadastro"
+                placeholder=""
+              />
+            </div>
+
+            <div class="boxInput">
+              <label for="age">Idade<abbr title="required">*</abbr>:</label>
+              <input
+                type="number"
+                name="age"
+                id="age"
+                class="inputCadastro"
+                placeholder=""
+              />
+            </div>
+
+            <div class="boxAddress">
+              <div class="w80">
+                <label for="address"
+                  >Endereço<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="w20">
+                <label for="number"
+                  >Número<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="number"
+                  id="number"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="w50">
+                <label for="district"
+                  >Bairro<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="district"
+                  id="district"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="w50">
+                <label for="complement"
+                  >Complemento<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  type="text"
+                  name="complement"
+                  id="complement"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="w60">
+                <label for="city">Cidade<abbr title="required">*</abbr>:</label>
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="w40">
+                <label for="state"
+                  >Estado<abbr title="required">*</abbr>:</label
+                >
+                <input
+                  list="states"
+                  id="state"
+                  name="state"
+                  class="inputCadastro"
+                  placeholder=""
+                />
+
+                <datalist id="states">
+                  <option value="SP"></option>
+                  <option value="RJ"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              role="button"
+              aria-label="Botão alterar"
+              onclick="alterarCliente()"
+              class="defaultBtn"
+            >
+              Alterar
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
+    <!-- DON'T REMOVE -->
+    <script src="./../../assets/scripts/main.js"></script>
+    <script src="./../../assets/scripts/functions.js"></script>
+    <script src="./script.js"></script>
+    <!-- DON'T REMOVE -->
+  </body>
+</html>

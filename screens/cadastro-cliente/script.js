@@ -48,6 +48,7 @@ function cadastrarCliente() {
       console.log(response);
       if (response.status == 201) {
         alert("Cliente cadastrado com sucesso!");
+        window.location.replace("../consultar-cliente/index.html");
       } else {
         alert(
           "Houve um problema ao cadastrar o cliente. " + response.statusText

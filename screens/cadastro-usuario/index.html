@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro Cliente</title>
+    <title>Cadastro Usuário</title>
     <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
     <link rel="stylesheet" href="./../../assets/styles/fonts.css" />
     <link rel="stylesheet" href="./../../assets/styles/main.css" />
@@ -23,7 +23,7 @@
     <main id="wrapper" aria-label="Conteúdo da página" role="main">
       <div id="cadastroCliente">
         <div class="indent">
-          <h1>Cadastrar cliente</h1>
+          <h1>Cadastrar Usuário</h1>
           <form action="javascript:;" id="formCadastro">
             <div class="boxInput">
               <label for="name">Nome<abbr title="required">*</abbr>:</label>
@@ -33,6 +33,17 @@
                 id="name"
                 class="inputCadastro"
                 placeholder="Ex: José da Silva"
+              />
+            </div>
+
+            <div class="boxInput">
+              <label for="email">E-mail<abbr title="required">*</abbr>:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="inputCadastro"
+                placeholder="Ex: josesilva@gmail.com"
               />
             </div>
 

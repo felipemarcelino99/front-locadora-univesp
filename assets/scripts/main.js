@@ -16,6 +16,8 @@ function loadHeader() {
             hideMenu.classList.toggle("open");
           });
         }
+
+        mountMenuHeader();
       }
     })
     .catch((error) => console.error("Erro ao carregar o header:", error));
@@ -38,3 +40,32 @@ function loadFooter() {
 // Chamar as funções para carregar o header e o footer
 loadHeader();
 loadFooter();
+
+function mountMenuHeader() {
+  console.log(isAuthenticated);
+  if (isAuthenticated) {
+    const listLinks = document.getElementById("listLinks");
+
+    let liClientes = document.createElement("li");
+    let linkClientes = document.createElement("a");
+    linkClientes.setAttribute("href", "./../../screens/consultar-cliente/");
+    linkClientes.innerText = "Clientes";
+    liClientes.appendChild(linkClientes);
+    listLinks.appendChild(liClientes);
+
+    let liProdutos = document.createElement("li");
+    let linkProdutos = document.createElement("a");
+    linkProdutos.innerText = "Produtos";
+    linkProdutos.setAttribute("href", "./../../screens/produtos/");
+    liProdutos.appendChild(linkProdutos);
+    listLinks.appendChild(liProdutos);
+
+    let liLogout = document.createElement("li");
+    let linkLogout = document.createElement("a");
+    linkLogout.innerText = "Logout";
+    linkLogout.setAttribute("href", "javascript:;");
+    linkLogout.setAttribute("onclick", "logout()");
+    liLogout.appendChild(linkLogout);
+    listLinks.appendChild(liLogout);
+  }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro Cliente</title>
+    <title>Altera Cadastro - Usuário</title>
     <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
     <link rel="stylesheet" href="./../../assets/styles/fonts.css" />
     <link rel="stylesheet" href="./../../assets/styles/main.css" />
@@ -21,9 +21,9 @@
     ></header>
     <!-- DON'T REMOVE -->
     <main id="wrapper" aria-label="Conteúdo da página" role="main">
-      <div id="cadastroCliente">
+      <div id="alteraCliente">
         <div class="indent">
-          <h1>Cadastrar cliente</h1>
+          <h1>Alterar Usuário</h1>
           <form action="javascript:;" id="formCadastro">
             <div class="boxInput">
               <label for="name">Nome<abbr title="required">*</abbr>:</label>
@@ -32,7 +32,7 @@
                 name="name"
                 id="name"
                 class="inputCadastro"
-                placeholder="Ex: José da Silva"
+                placeholder=""
               />
             </div>
 
@@ -43,7 +43,18 @@
                 name="age"
                 id="age"
                 class="inputCadastro"
-                placeholder="Ex: 30"
+                placeholder=""
+              />
+            </div>
+
+            <div class="boxInput">
+              <label for="email">E-mail<abbr title="required">*</abbr>:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="inputCadastro"
+                placeholder=""
               />
             </div>
 
@@ -57,7 +68,7 @@
                   name="address"
                   id="address"
                   class="inputCadastro"
-                  placeholder="Ex: R. Campos"
+                  placeholder=""
                 />
               </div>
 
@@ -70,7 +81,7 @@
                   name="number"
                   id="number"
                   class="inputCadastro"
-                  placeholder="Ex: 125"
+                  placeholder=""
                 />
               </div>
 
@@ -83,7 +94,7 @@
                   name="district"
                   id="district"
                   class="inputCadastro"
-                  placeholder="Ex: Matão"
+                  placeholder=""
                 />
               </div>
 
@@ -96,7 +107,7 @@
                   name="complement"
                   id="complement"
                   class="inputCadastro"
-                  placeholder="Ex: Apartamento, condomínio etc"
+                  placeholder=""
                 />
               </div>
 
@@ -107,7 +118,7 @@
                   name="city"
                   id="city"
                   class="inputCadastro"
-                  placeholder="Ex: São Paulo"
+                  placeholder=""
                 />
               </div>
 
@@ -120,7 +131,7 @@
                   id="state"
                   name="state"
                   class="inputCadastro"
-                  placeholder="Ex: SP"
+                  placeholder=""
                 />
 
                 <datalist id="states">
@@ -133,11 +144,11 @@
             <button
               type="submit"
               role="button"
-              aria-label="Botão cadastrar"
-              onclick="cadastrarCliente()"
+              aria-label="Botão alterar"
+              onclick="alterarCliente()"
               class="defaultBtn"
             >
-              Cadastrar
+              Alterar
             </button>
           </form>
         </div>

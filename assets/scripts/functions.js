@@ -1,28 +1,35 @@
-function checkIsAuth() {
+function isUserAuthenticated() {
   const authData = localStorage.getItem("auth");
   const hasCheckedAuth = sessionStorage.getItem("hasCheckedAuth");
 
+  const isAuthenticated = hasCheckedAuth && authData;
+
+  if (isAuthenticated) {
+    return true;
+  }
+
   if (!hasCheckedAuth) {
     sessionStorage.setItem("hasCheckedAuth", "true");
-    if (authData) {
-      // Se existirem dados de autenticação, realizar ações correspondentes
-      // Por exemplo, redirecionar para a página de perfil ou exibir conteúdo restrito
-
-      // Converter a string JSON de volta para um objeto JavaScript (se necessário)
-      const authObject = JSON.parse(authData);
-
-      // Realizar ações com base nos dados de autenticação, por exemplo:
-      // Redirecionar para a página de perfil
-      /* window.location.href = "../../screens/signedHome"; */
-      return;
-    } else {
-      // Se não houver dados de autenticação, redirecionar para a página de login
-      //window.location.href = "../../index.html";
-      return;
-    }
+  } else if (!authData) {
+    return false;
   }
 }
-checkIsAuth();
+isUserAuthenticated();
+
+const isAuthenticated = isUserAuthenticated();
+
+function isNotIndexOrCadastroUsuarioPage() {
+  const currentPage = window.location.href;
+  return (
+    currentPage !== `${window.location.origin}/index.html` &&
+    currentPage !== `${window.location.origin}/screens/cadastro-usuario/` &&
+    !isAuthenticated
+  );
+}
+
+if (isNotIndexOrCadastroUsuarioPage()) {
+  window.location.href = "../../index.html";
+}
 
 function login() {
   // Obter os valores dos campos do formulário
@@ -50,8 +57,14 @@ function login() {
     .then((data) => {
       const jsonDataString = JSON.stringify(data);
       localStorage.setItem("auth", jsonDataString);
+      window.location.href = "../../screens/signedHome/";
     })
     .catch((error) => console.error("Erro:", error));
+}
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "../../index.html";
 }
 
 function register() {

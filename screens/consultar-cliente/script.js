@@ -69,12 +69,11 @@ function populateTable(items) {
 
     html += htmlSegment;
   });
-  if (html){
+  if (html) {
     tabelaClientes.innerHTML = tabelaClientesHeader + html;
-  }
-  else{
+  } else {
     alert("Cliente não encontrado!");
-    tabelaClientes.innerHTML = "<tr>Cliente não encontrado!</tr>"
+    tabelaClientes.innerHTML = "<tr>Cliente não encontrado!</tr>";
   }
 }
 
@@ -82,47 +81,50 @@ renderUsers();
 
 function edit(element) {
   //Pega a linha da tabela a partir do botão editar que foi clicado:
-  let selectedRow = element.parentNode.parentNode
+  let selectedRow = element.parentNode.parentNode;
   window.location.replace(`../altera-cliente/index.html?id=${selectedRow.id}`);
 }
 
 function remove(element) {
-  let selectedElement = element.parentNode.parentNode
-  let message = `Tem certeza de que deseja excluir este cliente?\n${selectedElement.getAttribute("name")} [id: ${selectedElement.id}]`;
-  if(confirm(message)){
+  let selectedElement = element.parentNode.parentNode;
+  let message = `Tem certeza de que deseja excluir este cliente?\n${selectedElement.getAttribute(
+    "name"
+  )} [id: ${selectedElement.id}]`;
+  if (confirm(message)) {
     removeUser(selectedElement.id);
-  }
-  else {
+  } else {
     alert("Exclusão cancelada!");
   }
 }
 
-function clearOther(element){
+function clearOther(element) {
   let nameInput = document.getElementById("name");
   let addressInput = document.getElementById("address");
 
-  if (element === nameInput){
+  if (element === nameInput) {
     addressInput.value = "";
-  }
-  else{
+  } else {
     nameInput.value = "";
   }
 }
 
-function consultarCliente(){
+function consultarCliente() {
   let nameInput = document.getElementById("name");
   let addressInput = document.getElementById("address");
   let search = nameInput.value ? nameInput : addressInput;
-  if (!search.value){
+  if (!search.value) {
     renderUsers();
     return;
   }
   let found;
-  if (search.id === "name"){
-    found = users.filter(function(item) { return item.name.includes(search.value);});
-  }
-  else {
-    found = users.filter(function(item) { return item.address.includes(search.value);});
+  if (search.id === "name") {
+    found = users.filter(function (item) {
+      return item.name.includes(search.value);
+    });
+  } else {
+    found = users.filter(function (item) {
+      return item.address.includes(search.value);
+    });
   }
   populateTable(found);
 }

@@ -31,7 +31,7 @@ if (isNotIndexOrCadastroUsuarioPage()) {
   window.location.href = "../../index.html";
 }
 
-function login() {
+async function login() {
   // Obter os valores dos campos do formulário
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -42,24 +42,14 @@ function login() {
     password: password,
   };
 
-  // Converter o objeto JavaScript para uma string JSON
-  const jsonData = JSON.stringify(data);
-
   // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/user`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const jsonDataString = JSON.stringify(data);
-      localStorage.setItem("auth", jsonDataString);
-      window.location.href = "../../screens/signedHome/";
-    })
-    .catch((error) => console.error("Erro:", error));
+  let username = "LOCADORA";
+  let pass = "$2a$12$rZfKbNSN7z4V6G0wuGlgG.1/fZrL.f88AuZzGx84aRsn9oXE8yjYS";
+  headers["Authorization"] = 'Basic ' + btoa(username + ":" + pass);
+  let response = await postRequest(`${BASE_URL}/user`, data);
+  let jsonDataString = JSON.stringify(response.data);
+  updateToken(jsonDataString);
+  window.location.href = "../../screens/signedHome/";
 }
 
 function logout() {
@@ -67,7 +57,7 @@ function logout() {
   window.location.href = "../../index.html";
 }
 
-function register() {
+async function register() {
   // Obter os valores dos campos do formulário
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;
@@ -101,23 +91,151 @@ function register() {
     // state: state,
   };
 
-  // Converter o objeto JavaScript para uma string JSON
-  const jsonData = JSON.stringify(data);
+  try {
+    let res = await postRequest(`${BASE_URL}/user`, data);
 
-  // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/client`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Authorization:
-      //   "Basic TE9DQURPUkE6JDJhJDEyJHJaZktiTlNON3o0VjZHMHd1R2xnRy4xL2ZackwuZjg4QXVaekd4ODRhUnNuOW9YRTh5allT",
-    },
-    body: jsonData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const jsonDataString = JSON.stringify(data);
-      localStorage.setItem("auth", jsonDataString);
-    })
-    .catch((error) => console.error("Erro:", error));
+    if (res.status == 201) {
+      alert("Usuário cadastrado com sucesso!");
+      console.log(res.data);
+      localStorage.setItem("auth", JSON.stringify(res.data));
+    }
+    else {
+      alert("Houve um problema ao tentar cadastrar este usuário.");
+      console.log(res);
+      console.log(res.status);
+    }
+   } catch (error) {
+     console.log(error);
+     alert("Houve um problema ao tentar cadastrar este usuário.");
+   }
+}
+
+function createLoadingElement(){
+  let loadingElement = document.createElement('div');
+  let loaderElement = document.createElement('div');
+  loaderElement.classList.add("loader");
+  loadingElement.id = 'loading';
+  loadingElement.appendChild(loaderElement);
+  document.getElementById("wrapper").appendChild(loadingElement);
+  return loadingElement;
+}
+
+function loading(loading){
+  let loadingHTML = document.getElementById("loading");
+
+  if(!loadingHTML) {
+    loadingHTML = createLoadingElement();
+  }
+  
+  if(loading){
+    loadingHTML.classList.add("showLoading");
+    loadingHTML.classList.remove("hideLoading");
+  }else{
+    loadingHTML.classList.remove("showLoading");
+    loadingHTML.classList.add("hideLoading");
+  }
+}
+
+// API
+
+const headers = {
+  "Content-Type": "application/json"
+}
+
+function updateToken(token){
+  if(token){
+    localStorage.setItem("auth", token);
+    /* headers["Authorization"] = `Bearer ${token}` */
+  }
+}
+
+async function getRequest(url, showLoading = true){
+  if(showLoading){
+    loading(true)
+  }
+  try {
+      let res = await fetch( url, {
+        method: "GET",
+        headers
+      });
+
+      response = {
+        data: res.json(),
+        status: res.status
+      }
+      return await response;
+    } catch (error) {
+      console.log(error);
+      return error;
+    } finally {
+      loading(false)
+    }
+}
+
+async function postRequest(url, body, showLoading = true){
+  if(showLoading){
+    loading(true);
+  }
+  try {
+    const jsonBody = JSON.stringify(body);
+      let res = await fetch( url, {
+        method: "POST",
+        headers,
+        body: jsonBody
+      });
+
+      response = {
+        data: res.json(),
+        status: res.status
+      }
+      return await response;
+    } catch (error) {
+      console.log(error);
+      return error;
+    } finally {
+      loading(false);
+    }
+}
+
+async function putRequest(url, body, showLoading = true){
+  if(showLoading){
+    loading(true);
+  }
+  try {
+    const jsonBody = JSON.stringify(body);
+      let res = await fetch( url, {
+        method: "PUT",
+        headers,
+        body: jsonBody
+      });
+
+      response = {
+        data: res.json(),
+        status: res.status
+      }
+      return await response;
+    } catch (error) {
+      console.log(error);
+      return error;
+    } finally {
+      loading(false);
+    }
+}
+
+async function deleteRequest(url, showLoading = true){
+  if(showLoading){
+    loading(true);
+  }
+  try {
+      let res = await fetch( url, {
+        method: "DELETE",
+        headers,
+      });
+
+      return await res;
+    } catch (error) {
+      return error;
+    } finally {
+      loading(false);
+    }
 }

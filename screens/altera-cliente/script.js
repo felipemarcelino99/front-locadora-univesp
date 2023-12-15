@@ -9,23 +9,18 @@ const cityElement = document.getElementById("city");
 const stateElement = document.getElementById("state");
 
 async function getClient(id) {
+
   try {
-    let res = await fetch(`${BASE_URL}/client/${id}`, {
-      /* mode: 'no-cors', */
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    return await res.json();
-  } catch (error) {
-    console.log(error);
-  }
+    let client = await getRequest(`${BASE_URL}/client/${id}`);
+    return client.data;
+   } catch (error) {
+     console.log(error);
+     alert("Houve um problema ao tentar consultar este cliente.");
+   }
 }
 
 async function populateForm() {
   let client = await getClient(clientId);
-  /* console.log(client); */
 
   nameElement.value = client.name;
   nameElement.placeholder = client.name;
@@ -66,7 +61,7 @@ async function populateForm() {
   }
 }
 
-function alterarCliente() {
+async function alterarCliente() {
   // Criar um objeto JavaScript para representar os dados
   const data = {
     id: clientId,
@@ -91,31 +86,21 @@ function alterarCliente() {
     // state: state,
   };
 
-  // Converter o objeto JavaScript para uma string JSON
-  const jsonData = JSON.stringify(data);
-  console.log(jsonData);
+  try {
+    let res = await putRequest(`${BASE_URL}/client`, data);
 
-  // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/client`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => {
-      response.json();
-      console.log(response);
-      if (response.status == 202) {
-        alert("Cliente alterado com sucesso!");
-        window.location.replace("../consultar-cliente/index.html");
-      } else {
-        alert("Houve um problema ao alterar o cliente. " + response.statusText);
-      }
-    })
-    .catch((error) =>
-      alert("Houve um problema ao alterar o cliente. " + error)
-    );
+    if (res.status == 202) {
+      alert("Cliente alterado com sucesso!");
+      window.location.replace("../consultar-cliente/index.html");
+    }
+    else {
+      alert("Houve um problema ao tentar alterar este cliente.");
+      console.log(res);
+    }
+   } catch (error) {
+     console.log(error);
+     alert("Houve um problema ao tentar alterar este cliente.");
+   }
 }
 
 populateForm();

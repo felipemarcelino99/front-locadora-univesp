@@ -1,4 +1,4 @@
-function cadastrarCliente() {
+async function cadastrarCliente() {
   // Obter os valores dos campos do formulário
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;
@@ -32,28 +32,20 @@ function cadastrarCliente() {
     // state: state,
   };
 
-  // Converter o objeto JavaScript para uma string JSON
-  const jsonData = JSON.stringify(data);
+  try {
+    let res = await postRequest(`${BASE_URL}/client`, data);
 
-  // Enviar a requisição POST usando Fetch API
-  fetch(`${BASE_URL}/client`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: jsonData,
-  })
-    .then((response) => {
-      response.json();
-      console.log(response);
-      if (response.status == 201) {
-        alert("Cliente cadastrado com sucesso!");
-        window.location.replace("../consultar-cliente/index.html");
-      } else {
-        alert(
-          "Houve um problema ao cadastrar o cliente. " + response.statusText
-        );
-      }
-    })
-    .catch((error) => console.error("Erro:", error));
+    if (res.status == 201) {
+      alert("Cliente cadastrado com sucesso!");
+      window.location.replace("../consultar-cliente/index.html");
+    }
+    else {
+      alert("Houve um problema ao tentar cadastrar este cliente.");
+      console.log(res);
+      console.log(res.status);
+    }
+   } catch (error) {
+     console.log(error);
+     alert("Houve um problema ao tentar cadastrar este cliente.");
+   }
 }

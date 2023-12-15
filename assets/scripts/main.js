@@ -1,4 +1,5 @@
 const BASE_URL = "https://locadora-0uhi.onrender.com";
+/* const BASE_URL = "http://127.0.0.1:8080"; */
 
 function loadHeader() {
   fetch("./../../layout/header/index.html")
@@ -43,6 +44,7 @@ loadFooter();
 
 function mountMenuHeader() {
   console.log(isAuthenticated);
+  console.log(localStorage.getItem("auth"));
   if (isAuthenticated) {
     const listLinks = document.getElementById("listLinks");
 

@@ -4,14 +4,13 @@ let tabelaClientesHeader = tabelaClientes.innerHTML;
 
 async function getUsers() {
   try {
-    let res = await fetch(`${BASE_URL}/client`, {
-      /* mode: 'no-cors', */
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    return await res.json();
+   const clientes = await getRequest(`${BASE_URL}/client`);
+   if (clientes.status == 200){
+    return clientes.data;
+   }
+   else{
+    alert("Houve um problema ao carregar os clientes!");
+   }
   } catch (error) {
     console.log(error);
   }
@@ -23,23 +22,24 @@ async function renderUsers() {
 }
 
 async function removeUser(id) {
+
   try {
-    await fetch(`${BASE_URL}/client/${id}`, {
-      /* mode: 'no-cors', */
-      method: "DELETE",
-    });
-    // Verificar o código de resposta, que deve ser 200 ou 204 para deletado com sucesso.
-    alert("Cliente excluído com sucesso!");
-    renderUsers();
-  } catch (error) {
+    let deleteClient = await deleteRequest(`${BASE_URL}/client/${id}`);
+    if (deleteClient.status == 204) {
+      alert("Cliente excluído com sucesso!");
+      renderUsers();
+    }
+    else{
+      alert("Houve um problema ao tentar excluir este cliente.");
+    }
+   } catch (error) {
     alert("Houve um problema ao tentar excluir este cliente.");
-    console.log(error);
-  }
+   }
 }
 
-function populateTable(items) {
+async function populateTable(items) {
   let html = "";
-  items.forEach((item) => {
+  await items.forEach((item) => {
     let htmlSegment = `<tr id="${item.id}" name="${item.name}" age="${item.age}" address="${item.address}">
       <input type="hidden" name="user-${item.name}" id="user-${item.id}" value="${item.id}">
       <td>${item.name}</td>

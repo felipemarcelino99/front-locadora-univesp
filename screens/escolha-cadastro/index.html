@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Screen</title>
+    <link rel="stylesheet" href="./../../assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./../../assets/styles/main.css" />
+    <link rel="stylesheet" href="./../../layout/header/styles.css" />
+    <link rel="stylesheet" href="./../../layout/footer/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body role="body">
+    <!-- REMEMBER TO USE SEMANTICS TAGS FOR YOUR DEVELOPMENT -->
+    <header
+      id="header-container"
+      role="heading"
+      aria-label="Cabeçalho"
+    ></header>
+    <!-- DON'T REMOVE -->
+    <main id="wrapper" aria-label="Conteúdo da página" role="main">
+     <div id="Escolha">
+      <div class="indent">
+        <h1>Cadastro</h1>
+              <button type="button" name="filmes" class="defaultBtn" onclick="exibirFormulario('formCadastroFilme');clicked(this);">
+                Filme
+              </button>
+
+              <button type="button" name="jogos" class="defaultBtn" onclick="exibirFormulario('formCadastroJogo');clicked(this);">
+                Jogo
+              </button>
+
+            <div id="cadastroFilme"> <!-- Form de filme -->
+                <form action="javascript:;" id="formCadastroFilme" style="display: none;">
+                  <h1>Filme</h1>
+                  <div class="boxInput">
+                    <label for="name">Nome<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="inputCadastro"
+                      placeholder="Ex: 007 - Golden Eye"
+                      required
+                    />
+                  </div>
+      
+                  <div class="boxRating">
+                    <div class ="w20">
+                    <label for="ageRating">Classificação<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="ageRating"
+                      id="ageRating"
+                      class="inputCadastro"
+                      placeholder="Ex: 12+"
+                      required
+                    />
+                    </div>
+      
+                    <div class="w20">
+                    <label for="release">Lançamento<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="number"
+                      name="release"
+                      id="release"
+                      class="inputCadastro"
+                      placeholder="Ex: 1995"
+                      required
+                      min="1950"
+                      max="2000"
+                    />
+                    </div>
+                  
+      
+                    <div class="w60">
+                    <label for="producer">Produtora<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="producer"
+                      id="producer"
+                      class="inputCadastro"
+                      placeholder="Ex: EON Productions"
+                      required
+                    />
+                    </div>
+                  </div> 
+                    <div class="boxInput">
+                    <label for="genre">Gênero<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="genre"
+                      id="genre"
+                      class="inputCadastro"
+                      placeholder="Ex: Espionagem"
+                      required
+                    />
+                    </div>
+      
+                  <div class="boxRating">
+                    <div class="w50">
+                    <label for="price">Categoria de Preço<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      class="inputCadastro"
+                      placeholder="Ex: Verde"
+                      required
+                    />
+                    </div>
+      
+                    <div class="w50">
+                    <label for="quantity">Quantidade<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="number"
+                      name="quantity"
+                      id="quantity"
+                      class="inputCadastro"
+                      placeholder="Ex: 3"
+                      required
+                      max="10"
+                    />
+                    </div>
+                  </div>  
+      
+                    <div class="boxInput">
+                    <label for="language">Idioma<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="language"
+                      id="language"
+                      class="inputCadastro"
+                      placeholder="Ex: Português - BR"
+                      required
+                    />
+                    </div>
+      
+                    <div class="boxInput">
+                      <label for="director">Diretor<abbr title="required">*</abbr>:</label>
+                      <input
+                        type="text"
+                        name="director"
+                        id="director"
+                        class="inputCadastro"
+                        placeholder="Ex: Matin Campbell"
+                        required
+                      />
+                      </div>
+       
+                  <button
+                    type="submit"
+                    role="button"
+                    aria-label="Botão cadastrar"
+                    onclick="cadastrarFilme()"
+                    class="defaultBtn"
+                  >
+                    Cadastrar
+                  </button>
+                </form>
+            </div>
+
+
+            <div id="cadastroJogo"> <!-- Form de Jogo -->
+                <form action="javascript:;" id="formCadastroJogo" style="display: none;">
+                  <h1>Jogo</h1>
+                  <div class="boxInput">
+                    <label for="name">Nome<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="inputCadastro"
+                      placeholder="Ex: 007 - Golden Eye"
+                      required
+                    />
+                  </div>
+      
+                  <div class="boxRating">
+                    <div class ="w20">
+                    <label for="ageRating">Classificação<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="ageRating"
+                      id="ageRating"
+                      class="inputCadastro"
+                      placeholder="Ex: 12+"
+                      required
+                    />
+                    </div>
+      
+                    <div class="w20">
+                    <label for="release">Lançamento<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="number"
+                      name="release"
+                      id="release"
+                      class="inputCadastro"
+                      placeholder="Ex: 1997"
+                      required
+                      min="1950"
+                      max="2000"
+                    />
+                    </div>
+                  
+      
+                    <div class="w60">
+                    <label for="producer">Produtora<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="producer"
+                      id="producer"
+                      class="inputCadastro"
+                      placeholder="Ex: Nintendo"
+                      required
+                    />
+                    </div>
+                                
+                    <div class="w50">
+                    <label for="price">Categoria de Preço<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      class="inputCadastro"
+                      placeholder="Ex: Verde"
+                      required
+                    />
+                    </div>
+      
+                    <div class="w50">
+                    <label for="quantity">Quantidade<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="number"
+                      name="quantity"
+                      id="quantity"
+                      class="inputCadastro"
+                      placeholder="Ex: 3"
+                      required
+                      max="10"
+                    />
+                    </div>
+                  </div> 
+      
+                    <div class="boxInput">
+                      <label for="genre">Gênero<abbr title="required">*</abbr>:</label>
+                      <input
+                        type="text"
+                        name="genre"
+                        id="genre"
+                        class="inputCadastro"
+                        placeholder="Ex: Tiro em primeira pessoa"
+                        required
+                      />
+                      </div>
+                    
+                    <div class="boxInput">
+                    <label for="console">Plataforma<abbr title="required">*</abbr>:</label>
+                    <input
+                      type="text"
+                      name="console"
+                      id="console"
+                      class="inputCadastro"
+                      placeholder="Ex: Nintendo 64"
+                      required
+                    />
+                    </div>
+                    
+                  <button
+                    type="submit"
+                    role="button"
+                    aria-label="Botão cadastrar"
+                    onclick="cadastrarJogo()"
+                    class="defaultBtn"
+                  >
+                    Cadastrar
+                  </button>
+                </form>
+            </div>
+      </div>
+    </div>  
+    </main>
+    <footer id="footer-container" aria-label="Rodapé"></footer>
+    <!-- DON'T REMOVE -->
+    <script src="./../../assets/scripts/main.js"></script>
+    <script src="./../../assets/scripts/functions.js"></script>
+    <script src="./script.js"></script>
+    <!-- DON'T REMOVE -->
+  </body>
+</html>

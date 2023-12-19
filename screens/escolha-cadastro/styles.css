@@ -1,0 +1,53 @@
+:root {
+    --DefaultBlue: #149BFC;
+    --blue: #0078F0;
+    --white: #FFF;
+    --darkGray: #212121;
+    --blackOpacityFifty: rgba(0, 0, 0, .5);
+    --blackOpacityTwentyFive: rgba(0, 0, 0, .5);
+}
+
+#Escolha { min-height: 100vh; width: 100%; max-width: 100%; background: linear-gradient(180deg, rgba(20, 155, 252, 1) 0%, rgba(0, 120, 240, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px; }
+#Escolha h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--white); font-weight: bold;}
+#Escolha .defaultBtn { width: fit-content; margin: 50px auto 0;}
+#Escolha .clicked { border: 2px solid red;}
+
+
+#cadastroFilme { min-height: 100vh; width: 100%; max-width: 100%; background: linear-gradient(180deg, rgba(20, 155, 252, 1) 0%, rgba(0, 120, 240, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px;}
+#cadastroFilme h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--blue); font-weight: bold;}
+#cadastroFilme #formCadastroFilme {padding: 50px; border-radius: 20px; background-color: var(--white); max-width: 800px; width: 100%; margin: 0 auto;}
+#cadastroFilme #formCadastroFilme .boxInput {width: 100%; max-width: 100%; margin-bottom: 20px;}
+#cadastroFilme #formCadastroFilme label {display: block; font-size: 14px; font-weight: bold; text-transform: uppercase; text-align: left; color: var(--blackOpacityFifty); margin-bottom: 10px;}
+#cadastroFilme #formCadastroFilme .inputCadastro {border-radius: 8px; padding: 8px 15px; width: calc(100% - 30px); max-width: calc(100% - 30px); text-align: left; font-size: 12px; color: var(--darkGray); border: 1px solid var(--blackOpacityTwentyFive);}
+#cadastroFilme #formCadastroFilme .inputCadastro::placeholder {color: var(--blackOpacityFifty);}
+#cadastroFilme #formCadastroFilme .inputCadastro:focus {border: 1px solid var(--darkGray); color: var(--darkGray);}
+#cadastroFilme #formCadastroFilme .boxRating {display: flex; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;}
+#cadastroFilme #formCadastroFilme .boxRating>div {display: inline-block;}
+#cadastroFilme #formCadastroFilme .boxRating .w20 {width: 20%;}
+#cadastroFilme #formCadastroFilme .boxRating .w40 {width: 38%;}
+#cadastroFilme #formCadastroFilme .boxRating .w50 {width: 49%;}
+#cadastroFilme #formCadastroFilme .boxRating .w60 {width: 56%;}
+#cadastroFilme #formCadastroFilme .boxRating .w80 {width: 78%;}
+#cadastroFilme #formCadastroFilme .defaultBtn {width: fit-content; margin: 50px auto 0;}
+
+
+#cadastroJogo { min-height: 100vh; width: 100%; max-width: 100%; background: linear-gradient(180deg, rgba(20, 155, 252, 1) 0%, rgba(0, 120, 240, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 50px;}
+#cadastroJogo h1 {font-size: 45px; text-align: center; text-transform: uppercase; color: var(--blue); font-weight: bold;}
+#cadastroJogo #formCadastroJogo {padding: 50px; border-radius: 20px; background-color: var(--white); max-width: 800px; width: 100%; margin: 0 auto;}
+#cadastroJogo #formCadastroJogo .boxInput {width: 100%; max-width: 100%; margin-bottom: 20px;}
+#cadastroJogo #formCadastroJogo label {display: block; font-size: 14px; font-weight: bold; text-transform: uppercase; text-align: left; color: var(--blackOpacityFifty); margin-bottom: 10px;}
+#cadastroJogo #formCadastroJogo .inputCadastro {border-radius: 8px; padding: 8px 15px; width: calc(100% - 30px); max-width: calc(100% - 30px); text-align: left; font-size: 12px; color: var(--darkGray); border: 1px solid var(--blackOpacityTwentyFive);}
+#cadastroJogo #formCadastroJogo .inputCadastro::placeholder {color: var(--blackOpacityFifty);}
+#cadastroJogo #formCadastroJogo .inputCadastro:focus {border: 1px solid var(--darkGray); color: var(--darkGray);}
+#cadastroJogo #formCadastroJogo .boxRating {display: flex; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px;}
+#cadastroJogo #formCadastroJogo .boxRating>div {display: inline-block;}
+#cadastroJogo #formCadastroJogo .boxRating .w20 {width: 20%;}
+#cadastroJogo #formCadastroJogo .boxRating .w40 {width: 38%;}
+#cadastroJogo #formCadastroJogo .boxRating .w50 {width: 49%;}
+#cadastroJogo #formCadastroJogo .boxRating .w60 {width: 56%;}
+#cadastroJogo #formCadastroJogo .boxRating .w80 {width: 78%;}
+#cadastroJogo #formCadastroJogo .defaultBtn {width: fit-content; margin: 50px auto 0;}
+
+
+
+

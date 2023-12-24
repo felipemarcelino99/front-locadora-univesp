@@ -46,78 +46,92 @@ function mountMenuHeader() {
   console.log(isAuthenticated);
   console.log(localStorage.getItem("auth"));
   if (isAuthenticated) {
-    const listLinks = document.getElementById("listLinks");
+    //  Logout
+    const menuFirstLine = document.getElementById("menuFirstLine");
 
-    //  Clientes
-    let liClientes = document.createElement("li");
-    let ulClientes = document.createElement("ul");
-    liClientes.innerText = "Clientes";
-    listLinks.appendChild(liClientes);
-    liClientes.appendChild(ulClientes);
-
-    let consultaCliente = document.createElement("li");
-    let linkConsultaCliente = document.createElement("a");
-    linkConsultaCliente.setAttribute("href", "./../../screens/consultar-cliente/");
-    ulClientes.appendChild(consultaCliente);
-    consultaCliente.appendChild(linkConsultaCliente);
-    linkConsultaCliente.innerText = "Consultar";
-
-    let cadastraCliente = document.createElement("li");
-    let linkCadastraCliente = document.createElement("a");
-    linkCadastraCliente.setAttribute("href", "./../../screens/cadastro-cliente/");
-    ulClientes.appendChild(cadastraCliente);
-    cadastraCliente.appendChild(linkCadastraCliente);
-    linkCadastraCliente.innerHTML = "Cadastrar";
-
-    //Produtos
-    let liProdutos = document.createElement("li");
-    let ulProdutos = document.createElement("ul");
-    liProdutos.innerText = "Produtos";
-    listLinks.appendChild(liProdutos);
-    liProdutos.appendChild(ulProdutos);
-
-    let consultaProduto = document.createElement("li");
-    let linkConsultaProduto = document.createElement("a");
-    linkConsultaProduto.setAttribute("href", "./../../screens/consulta-produto");
-    ulProdutos.appendChild(consultaProduto);
-    consultaProduto.appendChild(linkConsultaProduto);
-    linkConsultaProduto.innerText = "Consultar";
-
-    let cadastraProduto = document.createElement("li");
-    let linkCadastraProduto = document.createElement("a");
-    linkCadastraProduto.setAttribute("href", "./../../screens/cadastro-produto/");
-    ulProdutos.appendChild(cadastraProduto);
-    cadastraProduto.appendChild(linkCadastraProduto);
-    linkCadastraProduto.innerHTML = "Cadastrar";
-
-    //Locação
-    let liLocar = document.createElement("li");
-    let ulLocar = document.createElement("ul");
-    liLocar.innerText = "Locação";
-    listLinks.appendChild(liLocar);
-    liLocar.appendChild(ulLocar);
-
-    let consultaLocacao = document.createElement("li");
-    let linkConsultaLocacao = document.createElement("a");
-    linkConsultaLocacao.setAttribute("href", "./../../screens/consulta-locacao");
-    ulLocar.appendChild(consultaLocacao);
-    consultaLocacao.appendChild(linkConsultaLocacao);
-    linkConsultaLocacao.innerText = "Consultar";
-
-    let realizarLocacao = document.createElement("li");
-    let linkRealizarLocacao = document.createElement("a");
-    linkRealizarLocacao.setAttribute("href", "./../../screens/realizar-locacao/");
-    ulLocar.appendChild(realizarLocacao);
-    realizarLocacao.appendChild(linkRealizarLocacao);
-    linkRealizarLocacao.innerHTML = "Locar";
-
-    //Logout
-    let liLogout = document.createElement("li");
     let linkLogout = document.createElement("a");
     linkLogout.innerText = "Logout";
     linkLogout.setAttribute("href", "javascript:;");
     linkLogout.setAttribute("onclick", "logout()");
-    liLogout.appendChild(linkLogout);
-    listLinks.appendChild(liLogout);
+    linkLogout.classList.add("logout");
+    menuFirstLine.appendChild(linkLogout);
+
+    
+    const listLinks = document.getElementById("listLinks");
+
+    //  Clientes
+    let liClientes = document.createElement("li");
+    listLinks.appendChild(liClientes);
+
+    let pClientes = document.createElement("p");
+    pClientes.innerText = "Clientes";
+    liClientes.appendChild(pClientes);
+    
+    let clientesOptions = document.createElement("div");
+    liClientes.appendChild(clientesOptions);
+
+    // Clientes: Consulta
+    let linkConsultaCliente = document.createElement("a");
+    linkConsultaCliente.innerText = "Consultar";
+    linkConsultaCliente.setAttribute("href", "./../../screens/consultar-cliente/");
+    linkConsultaCliente.classList.add("subitem");
+    clientesOptions.appendChild(linkConsultaCliente);
+
+    //  Clientes: Cadastra
+    let linkCadastraCliente = document.createElement("a");
+    linkCadastraCliente.innerHTML = "Cadastrar";
+    linkCadastraCliente.setAttribute("href", "./../../screens/cadastro-cliente/");
+    linkCadastraCliente.classList.add("subitem");
+    clientesOptions.appendChild(linkCadastraCliente);
+
+    //  Produtos
+    let liProdutos = document.createElement("li");
+    listLinks.appendChild(liProdutos);
+
+    let pProdutos = document.createElement("p");
+    pProdutos.innerText = "Produtos";
+    liProdutos.appendChild(pProdutos);
+
+    let produtosOptions = document.createElement("div");
+    liProdutos.appendChild(produtosOptions);
+
+    //  Produtos: Consulta
+    let linkConsultaProduto = document.createElement("a");
+    linkConsultaProduto.innerText = "Consultar";
+    linkConsultaProduto.setAttribute("href", "./../../screens/consulta-produto");
+    linkConsultaProduto.classList.add("subitem");
+    produtosOptions.appendChild(linkConsultaProduto);
+
+    //  Produtos: Cadastra
+    let linkCadastraProduto = document.createElement("a");
+    linkCadastraProduto.innerHTML = "Cadastrar";
+    linkCadastraProduto.setAttribute("href", "./../../screens/cadastro-produto/");
+    linkCadastraProduto.classList.add("subitem");
+    produtosOptions.appendChild(linkCadastraProduto);
+
+    //  Locação
+    let liLocar = document.createElement("li");
+    listLinks.appendChild(liLocar);
+
+    let pLocar = document.createElement("p");
+    pLocar.innerText = "Locação";
+    liLocar.appendChild(pLocar);
+
+    let locarOptions = document.createElement("div");
+    liLocar.appendChild(locarOptions);
+
+    //  Locação: Consulta
+    let linkConsultaLocacao = document.createElement("a");
+    linkConsultaLocacao.innerText = "Consultar";
+    linkConsultaLocacao.setAttribute("href", "./../../screens/consulta-locacao");
+    linkConsultaLocacao.classList.add("subitem");
+    locarOptions.appendChild(linkConsultaLocacao);
+
+    //  Locação: Realizar locação
+    let linkRealizarLocacao = document.createElement("a");
+    linkRealizarLocacao.innerHTML = "Locar";
+    linkRealizarLocacao.setAttribute("href", "./../../screens/realizar-locacao/");
+    linkRealizarLocacao.classList.add("subitem");
+    locarOptions.appendChild(linkRealizarLocacao);
   }
 }
